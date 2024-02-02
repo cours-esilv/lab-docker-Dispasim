@@ -1,0 +1,15 @@
+version: '3'
+services:
+  back-end:
+    image: your-back-image
+    ports:
+      - "8000:8000"
+    environment:
+      - production
+  front-end:
+    image: mlopsfront
+    ports:
+      - "8000:8000"
+    environment:
+      - WS_BACK_URL=http://back-end:8000  
+      
